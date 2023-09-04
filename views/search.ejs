@@ -1,0 +1,16 @@
+<%- include('partials/header'); -%>
+
+    <h1>Search results</h1> 
+
+    <% allPosts.forEach((post) => { %>
+        <% if(post.title.includes(searchTerm) || post.text.includes(searchTerm)){ %>
+        <div class="bgPost">
+            <h1><%= post.title %></h1>
+            <p style="display: inline;"><%= post.text.substring(0,145) + "..." %></p><a href= "/posts/<%= post.title %>">Read more</a>
+        </div>
+        <% } %>
+    <% }) %>
+
+
+
+<%- include('partials/footer'); -%>
